@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def islower(c):
-    if 'a' <= c <= 'z':
+    if not c:
         return True
-    elif not c: 
+    elif 'a' <= c <= 'z':
         return True
     else:
         return False
