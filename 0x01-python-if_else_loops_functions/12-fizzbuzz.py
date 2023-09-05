@@ -11,4 +11,3 @@ def fizzbuzz():
         else:
             result = number
         print("{}".format(result), end=' ')
-
