@@ -6,4 +6,3 @@ def uppercase(s):
             print(up_letter, end='')
         else:
             print(letter, end='')
-    print()
