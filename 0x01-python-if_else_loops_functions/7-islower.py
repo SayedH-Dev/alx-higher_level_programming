@@ -5,6 +5,6 @@ def islower(c):
     elif 'A' <= c <= 'Z':
         return False
     elif not c:
-        return False
+        return True
     else:
         return False
