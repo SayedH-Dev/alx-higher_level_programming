@@ -7,19 +7,22 @@
   */
 int check_cycle(listint_t *list)
 {
-	if (list == NULL || list->nNode == NULL)
+	listint_t *tort;
+	listint_t *hare;
+
+	if (list == NULL || list->next == NULL)
 		return (0);
 
-	listint_t *tort = list;
-	listint_t *hare = list->nNode;
+	tort = list;
+	hare = list->next;
 
-	while (hare != NULL && hare->nNode != NULL)
+	while (hare != NULL && hare->next != NULL)
 	{
 		if (tort == hare)
 			return (1);
 
-		tort = tort->nNode;
-		hare = hare->nNode->nNode;
+		tort = tort->next;
+		hare = hare->next->next;
 	}
 	return (0);
 }
