@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 	listint_t *tort = list;
 	listint_t *hare = list->nNode;
 
-	while (hare != NULL && hare->next != NULL)
+	while (hare != NULL && hare->nNode != NULL)
 	{
 		if (tort == hare)
 			return (1);

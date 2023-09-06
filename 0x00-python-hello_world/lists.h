@@ -17,7 +17,7 @@ struct listint_t
 	struct listint_t *nNode;
 };
 
-typedef struct listint_t listint_t
+typedef struct listint_t listint_t;
 
 /*function declaration*/
 int check_cycle(listint_t *list);
