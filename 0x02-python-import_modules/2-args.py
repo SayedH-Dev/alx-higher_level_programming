@@ -6,6 +6,6 @@ if __name__ == "__main__":
     if arguments <= 0:
         print("0 arguments.")
     else:
-        print("{} arguments:".format(arguments))
+        print("{} argument{}:".format(arguments, 's' if arguments != 1 else ''))
         for index, value in enumerate(argv, start=1):
             print("{}: {}".format(index, value))
