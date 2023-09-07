@@ -7,5 +7,5 @@ if __name__ == "__main__":
         print("0 arguments.")
     else:
         print("{} arguments:".format(arguments))
-        for index, value enumerate(argv, start=1):
+        for index, value in enumerate(argv, start=1):
             print("{}: {}".format(index, value))
