@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 """ Rectangle class definition """
 
-number_of_instances = 0
-
 
 class Rectangle:
-    """class that represent a rectangle"""
+    """class that represent a rectangle
+    Att:
+        - int number_of_instances: number of the rectangle instances
+        """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """ rectangle initialization
         Args:
