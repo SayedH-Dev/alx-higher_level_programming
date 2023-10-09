@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+"""Defines a base geometry class BaseGeometry."""
+
+# Create an instance of BaseGeometry
+bg = __import__('7-base_geometry').BaseGeometry()
+
+# Testing area() method
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     str(e)
+'area() is not implemented'
+
+# Testing integer_validator() method with an integer
+>>> bg.integer_validator("test", 42)
+
+# Testing integer_validator() method with a non-integer
+>>> try:
+...     bg.integer_validator("test", "not_an_integer")
+... except TypeError as e:
+...     str(e)
+'test must be an integer'
+
+# Testing integer_validator() method with an integer less than or equal to 0
+>>> try:
+...     bg.integer_validator("test", 0)
+... except ValueError as e:
+...     str(e)
+'test must be greater than 0'
+
