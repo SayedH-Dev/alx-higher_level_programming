@@ -1,44 +1,42 @@
 #!/usr/bin/python3
 
-"""
 Checking for module docstring:
->>> m = __import__('7-base_geometry').__doc__
->>> len(m) > 1
-True
+    >>> m = __import__('7-base_geometry').__doc__
+    >>> len(m) > 1
+    True
 
 Checking for class docstring:
->>> c = __import__('7-base_geometry').BaseGeometry.__doc__
->>> len(c) > 1
-True
+    >>> c = __import__('7-base_geometry').BaseGeometry.__doc__
+    >>> len(c) > 1
+    True
 
 Checking for area() method docstring:
->>> a = __import__('7-base_geometry').BaseGeometry().area.__doc__
->>> len(a) > 1
-True
+    >>> a = __import__('7-base_geometry').BaseGeometry().area.__doc__
+    >>> len(a) > 1
+    True
 
 Checking for integer_validator() method docstring:
->>> iv = __import__('7-base_geometry').BaseGeometry().integer_validator.__doc__
->>> len(iv) > 1
-True
+    >>> iv = __import__('7-base_geometry').BaseGeometry().integer_validator.__doc__
+    >>> len(iv) > 1
+    True
 
 Checking that BaseGeometry inherits from object:
->>> issubclass(__import__('7-base_geometry').BaseGeometry, object)
-True
+    >>> issubclass(__import__('7-base_geometry').BaseGeometry, object)
+    True
 
 Checking for integer_validator() method with valid input:
->>> bg = __import__('7-base_geometry').BaseGeometry()
->>> bg.integer_validator("test", 42)
+    >>> bg = __import__('7-base_geometry').BaseGeometry()
+    >>> bg.integer_validator("test", 42)
 
 Checking for integer_validator() method with non-integer input:
->>> bg.integer_validator("test", "not_an_integer")
+    >>> bg.integer_validator("test", "not_an_integer")
 
 Checking for integer_validator() method with negative integer input:
->>> bg.integer_validator("test", -5)
+    >>> bg.integer_validator("test", -5)
 
 Checking for integer_validator() method with a large negative integer:
->>> bg.integer_validator("test", -1000000)
+    >>> bg.integer_validator("test", -1000000)
 
 Checking for integer_validator() method with a string
 that can be converted to an integer:
->>> bg.integer_validator("test", "42")
-"""
+    >>> bg.integer_validator("test", "42")
