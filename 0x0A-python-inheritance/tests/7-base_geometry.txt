@@ -30,13 +30,25 @@ Checking for integer_validator() method with valid input:
 
 Checking for integer_validator() method with non-integer input:
     >>> bg.integer_validator("test", "not_an_integer")
+    Traceback (most recent call last):
+        ...
+    TypeError: test must be an integer
 
 Checking for integer_validator() method with negative integer input:
     >>> bg.integer_validator("test", -5)
+    Traceback (most recent call last):
+        ...
+    ValueError: test must be greater than 0
 
 Checking for integer_validator() method with a large negative integer:
     >>> bg.integer_validator("test", -1000000)
+    Traceback (most recent call last):
+        ...
+    ValueError: test must be greater than 0
 
 Checking for integer_validator() method with a string
 that can be converted to an integer:
     >>> bg.integer_validator("test", "42")
+    Traceback (most recent call last):
+        ...
+    TypeError: test must be an integer
