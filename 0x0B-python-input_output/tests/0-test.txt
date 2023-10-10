@@ -1,0 +1,7 @@
+# Test file for read_file function
+
+This test file is to verify the functionality of the read_file function.
+
+## Test: Reading text file
+
+### Input:
