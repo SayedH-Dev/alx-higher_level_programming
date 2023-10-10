@@ -12,7 +12,8 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """ function that retrives a dictionary represntation of Student instance
+        """ function that retrives a dictionary
+        represntation of Student instance
         Args:
             - list attrs: list of attributes to be retrived
             if None, retrive all attributes
