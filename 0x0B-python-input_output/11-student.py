@@ -32,5 +32,5 @@ class Student:
         Args:
             json: dictionary that has names and values
         """
-        for key, value in json.item():
+        for key, value in json.items():
             setattr(self, key, value)
