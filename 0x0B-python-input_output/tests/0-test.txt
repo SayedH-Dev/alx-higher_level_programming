@@ -1,7 +1,14 @@
-# Test file for read_file function
+#!/usr/bin/python3
 
-This test file is to verify the functionality of the read_file function.
+# Checking for module docstring:
+>>> m = __import__('0-read_file').__doc__
+>>> len(m) > 1
+True
 
-## Test: Reading text file
+# Checking for read_file() function docstring:
+>>> read_file_doc = __import__('0-read_file').read_file.__doc__
+>>> len(read_file_doc) > 1
+True
 
-### Input:
+# Test 1: Reading an Existing File
+>>> result = __import__('0-read_file').read_file("file.txt")

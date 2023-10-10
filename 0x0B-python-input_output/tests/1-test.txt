@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+
+# Checking for module docstring:
+>>> m = __import__('1-write_file').__doc__
+>>> len(m) > 1
+True
+
+# Checking for write_file() function docstring:
+>>> write_file_doc = __import__('1-write_file').write_file.__doc__
+>>> len(write_file_doc) > 1
+True
+
+# Test 1: Writing to a New File
+>>> result = __import__('1-write_file').write_file("new_file.txt", "This is a writing test")
+>>> expected_characters_written = len("This is a writing test")
+>>> result == expected_characters_written
+True
+
+# Test 2: Reading the Content of the Newly Created File
+>>> with open("new_file.txt", mode='r', encoding='utf-8') as file:
+...     file_content = file.read()
+...
+>>> expected_content = "This is a writing test"
+>>> file_content == expected_content
+True
