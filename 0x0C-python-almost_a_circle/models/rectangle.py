@@ -96,7 +96,8 @@ class Rectangle(Base):
                 setattr(self, attrs[i], args[i])
         else:
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                if key in ["id", "width", "height", "x", "y"]:
+                    setattr(self, key, value)
 
     def to_dictionary(self):
         """ return dictionary of Rectangle """
