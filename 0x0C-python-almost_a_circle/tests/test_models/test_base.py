@@ -9,6 +9,15 @@ from models.square import Square
 
 
 class TestBase(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        pass
+
+    @classmethod
+    def tearDownClass(cls):
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+
     def test_base_constructor(self):
         base = Base()
         self.assertEqual(base.id, 1)
@@ -44,14 +53,12 @@ class TestBase(unittest.TestCase):
             data = json.load(file)
         expected_data = [r1.to_dictionary(), r2.to_dictionary()]
         self.assertEqual(data, expected_data)
-        os.remove("Rectangle.json")
 
     def test_base_save_to_file_empty_list(self):
         Base.save_to_file([])
         with open("Rectangle.json", "r") as file:
             data = json.load(file)
         self.assertEqual(data, [])
-        os.remove("Rectangle.json")
 
     def test_base_save_to_file_none(self):
         Base.save_to_file(None)
