@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ base class model """
 import json
+import csv
+import os
 
 
 class Base:
@@ -71,3 +73,27 @@ class Base:
         except FileNotFoundError:
             pass
         return instance_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serialize and save objects to a CSV file """
+        file_name = cls.__name__ + '.csv'
+        data = [obj.to_csv_dict() for obj in list_objs]
+        with open(file_name, mode='w') as file:
+            writer = csv.DictWriter(file, fieldnames=data[0].keys())
+            writer.writeheader()
+            for obj_data in data:
+                writer.writerow(obj_data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Deserialize and load objects from a CSV file """
+        file_name = cls.__name__ + '.csv'
+        obj_list = []
+        if os.path.isfile(file_name):
+            with open(file_name, mode='r') as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    obj = cls.create(**{k: int(v) for k, v in row.items()})
+                    obj_list.append(obj)
+        return obj_list

@@ -47,3 +47,12 @@ class Square(Rectangle):
                 'size': self.width,
                 'x': self.x,
                 'y': self.y}
+
+    def to_csv_dict(self):
+        """ convert sqaure attributes to a dictionary
+        for CSV serialization """
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y} 

@@ -109,3 +109,14 @@ class Rectangle(Base):
                 'height': self.height,
                 'x': self.x,
                 'y': self.y}
+
+    def to_csv_dict(self):
+        """ converts object attributes to dictionary
+        for CSV serialization """
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y,
+        }
