@@ -3,6 +3,7 @@
 import json
 import csv
 import os
+import turtle
 
 
 class Base:
@@ -97,3 +98,36 @@ class Base:
                     obj = cls.create(**{k: int(v) for k, v in row.items()})
                     obj_list.append(obj)
         return obj_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ drawing using turtle graphics module """
+        window = turtle.Screen()
+        window.title("Drawing Rectangles and Squares")
+
+        t = turtle.Turtle()
+        t.speed(2)
+
+        for rectangle in list_rectangles:
+            t.penup()
+            t.goto(rectangle.x, rectangle.y)
+            t.pendown()
+            t.color("blue")
+            t.begin_fill()
+            for _ in range(2):
+                t.forward(rectangle.width)
+                t.left(90)
+                t.forward(rectangle.height)
+                t.left(90)
+            t.end_fill()
+        for square in list_squares:
+            t.penup()
+            t.goto(square.x, square.y)
+            t.pendown()
+            t.color("orange")
+            t.begin_fill()
+            for _ in range(4):
+                t.forward(square.size)
+                t.left(90)
+            t.end_fill()
+        window.exitonclick()
