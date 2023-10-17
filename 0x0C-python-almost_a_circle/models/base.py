@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-""" base class """
+""" base class model """
 import json
 
 
 class Base:
+    """ Base class
+    the base of all the classes
+    private attribute:
+        __nb_object (int): number of bases
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
