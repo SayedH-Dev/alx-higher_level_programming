@@ -31,13 +31,17 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
         r1 = Rectangle(3, 2)
         expected_output = "###\n###\n"
-        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+        with unittest.mock.patch(
+                'sys.stdout',
+                new_callable=io.StringIO) as mock_stdout:
             r1.display()
             self.assertEqual(mock_stdout.getvalue(), expected_output)
 
         r2 = Rectangle(2, 3, 2, 2)
         expected_output = "\n\n  ##\n  ##\n  ##\n"
-        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+        with unittest.mock.patch(
+                'sys.stdout',
+                new_callable=io.StringIO) as mock_stdout:
             r2.display()
             self.assertEqual(mock_stdout.getvalue(), expected_output)
 
