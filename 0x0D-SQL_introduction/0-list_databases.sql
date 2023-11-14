@@ -1,3 +1,2 @@
--- listing of all databases
--- SQL query to list all databases
+-- SQL query for listing of all databases
 SHOW DATABASES;
