@@ -2,8 +2,7 @@
 const lines = [
     'C is fun',
     'Python is cool',
-    'JavaScript is amazing'
-  ];
+    'JavaScript is amazing'];
   for (const line of lines) {
     console.log(line);
   }
