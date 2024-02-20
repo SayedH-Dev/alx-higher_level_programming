@@ -1,1 +1,0 @@
-Readme file for task 0x13. JavaScript - Objects, Scopes and Closures at ALX SE
